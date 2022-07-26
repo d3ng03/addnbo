@@ -3,12 +3,12 @@
 #include <stdint.h>
 #include <netinet/in.h>
 
-int main(){
+int main(int argc, char** argv){
     FILE *fp1, *fp2;
     uint32_t n1, n2;
-
-    fp1 = fopen("thousand.bin", "rb");
-    fp2 = fopen("five-hundred.bin", "rb");
+    if(argc != 3) return 0;
+    fp1 = fopen(argv[1], "rb");
+    fp2 = fopen(argv[2], "rb");
 
     if(fp1 == NULL || fp2 == NULL) return 0;
  
